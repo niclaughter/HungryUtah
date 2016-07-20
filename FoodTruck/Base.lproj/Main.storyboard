@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U6j-KH-Cn0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up-->
+        <scene sceneID="VjO-Vb-9AW">
+            <objects>
+                <viewController storyboardIdentifier="signupView" id="WMT-qu-kdc" customClass="SignupViewController" customModule="FoodTruck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Sv-5q-QLe"/>
+                        <viewControllerLayoutGuide type="bottom" id="g3U-XX-PnT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iA4-gq-JgL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-yF-gca">
+                                <rect key="frame" x="20" y="131" width="560" height="388"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uyi-LS-81U">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
+                                        <segments>
+                                            <segment title="Individual User"/>
+                                            <segment title="Food Truck"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="setmentedControlChanged:" destination="WMT-qu-kdc" eventType="valueChanged" id="RXn-sm-Amp"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrV-Nw-rTH">
+                                        <rect key="frame" x="0.0" y="50" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POV-vZ-uQi">
+                                        <rect key="frame" x="0.0" y="102" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Food Truck" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYI-X8-8vF">
+                                        <rect key="frame" x="0.0" y="154" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="js6-Xk-PDg">
+                                        <rect key="frame" x="0.0" y="206" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7ws-HB-Mbn">
+                                        <rect key="frame" x="0.0" y="258" width="560" height="130"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SPT-MT-dHd">
+                                                <rect key="frame" x="215" y="0.0" width="130" height="130"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="2xC-lf-tck"/>
+                                                    <constraint firstAttribute="width" constant="130" id="wAW-In-5e5"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="aRh-pW-8FQ" appends="YES" id="bWm-iq-ibZ"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LsG-yF-gca" firstAttribute="centerY" secondItem="iA4-gq-JgL" secondAttribute="centerY" constant="25" id="DA0-tq-a9V"/>
+                            <constraint firstItem="LsG-yF-gca" firstAttribute="centerX" secondItem="iA4-gq-JgL" secondAttribute="centerX" id="NYI-nY-9cN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LsG-yF-gca" secondAttribute="trailing" id="ZoJ-uN-Fp1"/>
+                            <constraint firstItem="LsG-yF-gca" firstAttribute="leading" secondItem="iA4-gq-JgL" secondAttribute="leadingMargin" id="yHG-pO-4KY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="K4k-N4-yxw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nmn-OY-gi1">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="WMT-qu-kdc" id="x71-UJ-KvC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="js6-Xk-PDg" id="0Rn-Ii-fT1"/>
+                        <outlet property="firstNameTextField" destination="hrV-Nw-rTH" id="aHZ-ZL-wDX"/>
+                        <outlet property="foodTruckTextField" destination="eYI-X8-8vF" id="0tp-nR-Nzc"/>
+                        <outlet property="lastNameTextField" destination="POV-vZ-uQi" id="Ul0-5i-wyf"/>
+                        <outlet property="segmentedControl" destination="uyi-LS-81U" id="kit-97-iBl"/>
+                        <outlet property="truckImageView" destination="SPT-MT-dHd" id="Q86-Gl-4Bb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igb-UC-rM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aRh-pW-8FQ">
+                    <connections>
+                        <action selector="truckImageTapped:" destination="WMT-qu-kdc" id="bCj-eq-R9f"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2353" y="938"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="8gG-MX-Lk9">
+            <objects>
+                <viewController id="U6j-KH-Cn0" customClass="MapViewController" customModule="FoodTruck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QmX-vJ-22U"/>
+                        <viewControllerLayoutGuide type="bottom" id="ba5-fB-SAm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dsk-Il-TLn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-P7-VcK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="U6j-KH-Cn0" id="iHq-Dv-55s"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-by-VJ4">
+                                <rect key="frame" x="536" y="536" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="KD2-wp-lkz"/>
+                                    <constraint firstAttribute="height" constant="44" id="Zbe-PX-bex"/>
+                                </constraints>
+                                <state key="normal" image="navigationImage"/>
+                                <connections>
+                                    <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="gCu-bW-dME"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i2S-P7-VcK" firstAttribute="leading" secondItem="dsk-Il-TLn" secondAttribute="leading" id="7Fq-gx-TCw"/>
+                            <constraint firstAttribute="trailing" secondItem="i2S-P7-VcK" secondAttribute="trailing" id="Ov8-Zg-wml"/>
+                            <constraint firstItem="i2S-P7-VcK" firstAttribute="bottom" secondItem="ba5-fB-SAm" secondAttribute="top" id="URf-B1-FFp"/>
+                            <constraint firstItem="i2S-P7-VcK" firstAttribute="top" secondItem="dsk-Il-TLn" secondAttribute="top" id="W9G-37-sgK"/>
+                            <constraint firstItem="ba5-fB-SAm" firstAttribute="top" secondItem="gnd-by-VJ4" secondAttribute="bottom" constant="20" id="wtm-xC-RqG"/>
+                            <constraint firstAttribute="trailing" secondItem="gnd-by-VJ4" secondAttribute="trailing" constant="20" id="zaB-Ju-tB0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="i2S-P7-VcK" id="LbJ-3b-1tN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4H-A3-8sj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="214"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8YO-XT-M4F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nkg-eB-Aky" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UQr-b2-9uY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WMT-qu-kdc" kind="relationship" relationship="rootViewController" id="I1l-MT-N9O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xqh-Ef-Uag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="938"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="navigationImage" width="25" height="25"/>
+    </resources>
+</document>

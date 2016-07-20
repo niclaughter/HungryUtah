@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21EEFEED1D3E819C00224C80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFEEC1D3E819C00224C80 /* AppDelegate.swift */; };
+		21EEFEF21D3E819D00224C80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EEFEF01D3E819D00224C80 /* Main.storyboard */; };
+		21EEFEF41D3E819D00224C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EEFEF31D3E819D00224C80 /* Assets.xcassets */; };
+		21EEFEF71D3E819D00224C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EEFEF51D3E819D00224C80 /* LaunchScreen.storyboard */; };
+		21EEFEFF1D3E822A00224C80 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFEFE1D3E822A00224C80 /* MapViewController.swift */; };
+		21EEFF011D3E823F00224C80 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF001D3E823F00224C80 /* SignupViewController.swift */; };
+		21EEFF051D3E9D9400224C80 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF041D3E9D9400224C80 /* CloudKitManager.swift */; };
+		21EEFF0B1D3EA03400224C80 /* TruckLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */; };
+		66D416E41D3EA19400B286CA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D416E31D3EA19400B286CA /* LocationManager.swift */; };
+		66D416E71D3EA7DE00B286CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D416E61D3EA7DE00B286CA /* MapKit.framework */; };
+		66D416EA1D3EA7FA00B286CA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D416E91D3EA7FA00B286CA /* CloudKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21EEFEE91D3E819C00224C80 /* FoodTruck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTruck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21EEFEEC1D3E819C00224C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		21EEFEF11D3E819D00224C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		21EEFEF31D3E819D00224C80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21EEFEF61D3E819D00224C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		21EEFEF81D3E819D00224C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21EEFEFE1D3E822A00224C80 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		21EEFF001D3E823F00224C80 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		21EEFF041D3E9D9400224C80 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckLocation.swift; sourceTree = "<group>"; };
+		66D416E31D3EA19400B286CA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		66D416E61D3EA7DE00B286CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		66D416E81D3EA7F600B286CA /* FoodTruck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FoodTruck.entitlements; sourceTree = "<group>"; };
+		66D416E91D3EA7FA00B286CA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21EEFEE61D3E819C00224C80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D416E71D3EA7DE00B286CA /* MapKit.framework in Frameworks */,
+				66D416EA1D3EA7FA00B286CA /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21EEFEE01D3E819C00224C80 = {
+			isa = PBXGroup;
+			children = (
+				66D416E91D3EA7FA00B286CA /* CloudKit.framework */,
+				66D416E61D3EA7DE00B286CA /* MapKit.framework */,
+				21EEFEEB1D3E819C00224C80 /* FoodTruck */,
+				21EEFEEA1D3E819C00224C80 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21EEFEEA1D3E819C00224C80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21EEFEE91D3E819C00224C80 /* FoodTruck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21EEFEEB1D3E819C00224C80 /* FoodTruck */ = {
+			isa = PBXGroup;
+			children = (
+				66D416E81D3EA7F600B286CA /* FoodTruck.entitlements */,
+				21EEFF0D1D3EA04C00224C80 /* Model */,
+				21EEFF0C1D3EA03D00224C80 /* ModelController */,
+				21EEFF081D3E9DB400224C80 /* StoryBoard */,
+				21EEFF061D3E9D9D00224C80 /* ViewController */,
+				21EEFF091D3E9DE000224C80 /* Other */,
+			);
+			path = FoodTruck;
+			sourceTree = "<group>";
+		};
+		21EEFF061D3E9D9D00224C80 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21EEFF001D3E823F00224C80 /* SignupViewController.swift */,
+				21EEFEFE1D3E822A00224C80 /* MapViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		21EEFF071D3E9DAD00224C80 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				21EEFF041D3E9D9400224C80 /* CloudKitManager.swift */,
+			);
+			name = CloudKit;
+			sourceTree = "<group>";
+		};
+		21EEFF081D3E9DB400224C80 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				21EEFEF01D3E819D00224C80 /* Main.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		21EEFF091D3E9DE000224C80 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				21EEFEEC1D3E819C00224C80 /* AppDelegate.swift */,
+				21EEFEF31D3E819D00224C80 /* Assets.xcassets */,
+				21EEFEF51D3E819D00224C80 /* LaunchScreen.storyboard */,
+				21EEFEF81D3E819D00224C80 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		21EEFF0C1D3EA03D00224C80 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				21EEFF071D3E9DAD00224C80 /* CloudKit */,
+				66D416E51D3EA19800B286CA /* Location */,
+			);
+			name = ModelController;
+			sourceTree = "<group>";
+		};
+		21EEFF0D1D3EA04C00224C80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		66D416E51D3EA19800B286CA /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				66D416E31D3EA19400B286CA /* LocationManager.swift */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21EEFEE81D3E819C00224C80 /* FoodTruck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21EEFEFB1D3E819D00224C80 /* Build configuration list for PBXNativeTarget "FoodTruck" */;
+			buildPhases = (
+				21EEFEE51D3E819C00224C80 /* Sources */,
+				21EEFEE61D3E819C00224C80 /* Frameworks */,
+				21EEFEE71D3E819C00224C80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FoodTruck;
+			productName = FoodTruck;
+			productReference = 21EEFEE91D3E819C00224C80 /* FoodTruck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21EEFEE11D3E819C00224C80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = DevMountain;
+				TargetAttributes = {
+					21EEFEE81D3E819C00224C80 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = B24U63J96U;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 21EEFEE41D3E819C00224C80 /* Build configuration list for PBXProject "FoodTruck" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21EEFEE01D3E819C00224C80;
+			productRefGroup = 21EEFEEA1D3E819C00224C80 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21EEFEE81D3E819C00224C80 /* FoodTruck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21EEFEE71D3E819C00224C80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21EEFEF71D3E819D00224C80 /* LaunchScreen.storyboard in Resources */,
+				21EEFEF41D3E819D00224C80 /* Assets.xcassets in Resources */,
+				21EEFEF21D3E819D00224C80 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21EEFEE51D3E819C00224C80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21EEFF011D3E823F00224C80 /* SignupViewController.swift in Sources */,
+				21EEFEED1D3E819C00224C80 /* AppDelegate.swift in Sources */,
+				66D416E41D3EA19400B286CA /* LocationManager.swift in Sources */,
+				21EEFF051D3E9D9400224C80 /* CloudKitManager.swift in Sources */,
+				21EEFEFF1D3E822A00224C80 /* MapViewController.swift in Sources */,
+				21EEFF0B1D3EA03400224C80 /* TruckLocation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		21EEFEF01D3E819D00224C80 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21EEFEF11D3E819D00224C80 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		21EEFEF51D3E819D00224C80 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21EEFEF61D3E819D00224C80 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21EEFEF91D3E819D00224C80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		21EEFEFA1D3E819D00224C80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21EEFEFC1D3E819D00224C80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodTruck/FoodTruck.entitlements;
+				INFOPLIST_FILE = FoodTruck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.FoodTruck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		21EEFEFD1D3E819D00224C80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodTruck/FoodTruck.entitlements;
+				INFOPLIST_FILE = FoodTruck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.FoodTruck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21EEFEE41D3E819C00224C80 /* Build configuration list for PBXProject "FoodTruck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21EEFEF91D3E819D00224C80 /* Debug */,
+				21EEFEFA1D3E819D00224C80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21EEFEFB1D3E819D00224C80 /* Build configuration list for PBXNativeTarget "FoodTruck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21EEFEFC1D3E819D00224C80 /* Debug */,
+				21EEFEFD1D3E819D00224C80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21EEFEE11D3E819C00224C80 /* Project object */;
+}
