@@ -14,7 +14,7 @@ import CloudKit
 class TruckController {
     
     static let sharedController = TruckController()
-    
+    var truckInfos: [TruckLocation] = []
     var delegate: SaveTruckProtocol?
     
     func saveTruck(name: String, image: NSData) {
@@ -38,6 +38,29 @@ class TruckController {
             })
         }
     }
+    
+    func fetchTruckLocations() {
+        CloudKitManager.sharedManager.fetchRecordsWithType(CloudKitManager.RecordTypes.location.rawValue, recordFetchedBlock: { (locationRecord) in
+            guard let truckReference = locationRecord["Truck"] as? CKReference else { return }
+            CloudKitManager.sharedManager.fetchRecordWithID(truckReference.recordID, completion: { (record, error) in
+                guard let truckRecord = record,
+                    name = truckRecord["Name"] as? String,
+                    imageAsset = truckRecord["Image"] as? CKAsset,
+                    image = imageFromAsset(imageAsset),
+                    location = locationRecord["Location"] as? CLLocation,
+                    expirationDate = locationRecord["ExpireDate"] as? NSDate else { return }
+                let truckLocation = TruckLocation(name: name, image: image, expirationDate: expirationDate, location: location)
+                self.truckInfos.append(truckLocation)
+            })
+            }, completion: nil)
+    }
+}
+
+func imageFromAsset(asset: CKAsset) -> UIImage? {
+    if let data = NSData(contentsOfURL: asset.fileURL) {
+        return UIImage(data: data)
+    }
+    return nil
 }
 
 protocol SaveTruckProtocol {

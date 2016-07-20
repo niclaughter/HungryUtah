@@ -14,6 +14,8 @@ class LocationManager {
     
     static let shared = LocationManager()
     
+    
+    
     func setUpMapView(mapView: MKMapView, locationManager: CLLocationManager) {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 50
