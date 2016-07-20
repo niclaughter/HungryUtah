@@ -27,6 +27,22 @@ class UserController {
         NSUserDefaults.standardUserDefaults().removeObjectForKey(keyLoggedInUser)
     }
     
+    static func checkIfUserHasTruck(completion: (Bool) -> Void) {
+        guard let id = UserController.getUserID() else { completion(false); return }
+        let recordID = CKRecordID(recordName: id)
+        CloudKitManager.sharedManager.fetchRecordWithID(recordID) { (record, error) in
+            if let error = error {
+                print("Error fetching user from CloudKit for truck info - \(error.localizedDescription)")
+                completion(false)
+            } else if let record = record,
+                let _ = record["Truck"] as? CKReference {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
     
     static func saveUserToCloudKit(firstName: String, lastName: String, email: String?, truckReference: CKReference?, dateCreated: NSDate = NSDate()) {
         let id = NSUUID().UUIDString
