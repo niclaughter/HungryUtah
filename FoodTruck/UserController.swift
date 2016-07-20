@@ -24,7 +24,7 @@ class UserController {
     }
     
     static func removeUser() {
-        NSUserDefaults.standardUserDefaults().setObject("", forKey: keyLoggedInUser)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(keyLoggedInUser)
     }
     
     
