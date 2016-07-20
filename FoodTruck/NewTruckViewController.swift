@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import CloudKit
 
 
 class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, SaveTruckProtocol {
-
-
+    
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var selectImageButton: UIButton!
+    
+    var signupController: SignupViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
         TruckController.sharedController.delegate = self
+        if let destinationVC = navigationController?.viewControllers[0] as? SignupViewController {
+            signupController = destinationVC
+        }
     }
-
+    
     @IBAction func selectPhotoButtonTapped(sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -49,7 +55,7 @@ class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate,
             imageView.image = image
         }
     }
-
+    
     @IBAction func cancelButtonTapped(sender: UIBarButtonItem) {
         navigationController?.popViewControllerAnimated(true)
     }
@@ -57,20 +63,43 @@ class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
         guard let image = imageView.image,
             let name = nameTextField.text,
-            let imageData = UIImagePNGRepresentation(image) where name.characters.count > 0 else { showAlert(); return }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        TruckController.sharedController.saveTruck(name, image: imageData)
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            let imageData = UIImageJPEGRepresentation(image, 0.8),
+            let signupController = signupController where name.characters.count > 0 else { showAlert("Please Select Photo and Enter Truck Name"); return }
+        var exists = false
+        for truck in signupController.truckOptions {
+            if truck.name.lowercaseString == name.lowercaseString {
+                exists = true
+                showAlert("This truck already exists!")
+            }
+        }
+        if !exists {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            TruckController.sharedController.saveTruck(name, image: imageData)
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        }
     }
     
-    func truckFinishedSaving() {
+    func truckFinishedSaving(record: CKRecord?) {
+        if let record = record {
+            let truck = Truck(record: record)
+            if let signupController = signupController,
+                let truck = truck {
+                signupController.truckOptions.append(truck)
+                for i in 0..<signupController.truckOptions.count {
+                    if signupController.truckOptions[i].id == truck.id {
+                        signupController.pickerView.selectRow(i, inComponent: 0, animated: true)
+                        signupController.selectedTruck = signupController.truckOptions[i]
+                    }
+                }
+            }
+        }
         UIApplication.sharedApplication().endIgnoringInteractionEvents()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
-    func showAlert() {
-        let alert = UIAlertController(title: "Error", message: "Please Select Photo and Enter Truck Name", preferredStyle: .Alert)
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alert.addAction(okAction)
         presentViewController(alert, animated: true, completion: nil)

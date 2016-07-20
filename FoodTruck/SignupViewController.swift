@@ -17,28 +17,35 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet var pickerView: UIPickerView!
     
-    var truckOptions = [Truck]()
+    var truckOptions = [Truck]() {
+        didSet {
+            truckOptions.sortInPlace({$0.name < $1.name})
+        }
+    }
+    
+    
     var selectedTruck: Truck? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadTrucks()
         setupView()
         hideFields()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    func loadTrucks() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         CloudKitManager.sharedManager.fetchRecordsWithType("Truck", recordFetchedBlock: nil) { (records, error) in
             if let error = error {
                 print("Error fetching trucks -\(error.localizedDescription)")
             } else if let records = records {
                 let trucks = records.flatMap({Truck(record: $0)})
-                dispatch_async(dispatch_get_main_queue(), { 
+                dispatch_async(dispatch_get_main_queue(), {
                     self.truckOptions = trucks
                     self.pickerView.reloadAllComponents()
                 })
             }
-             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
     
