@@ -32,14 +32,18 @@ class TruckController {
         CloudKitManager.sharedManager.saveRecord(record) { (record, error) in
             if let error = error {
                 print("Error saving truck to CloudKit - \(error.localizedDescription)")
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.delegate?.truckFinishedSaving(nil)
+                })
+            } else if let record = record {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.delegate?.truckFinishedSaving(record)
+                })
             }
-            dispatch_async(dispatch_get_main_queue(), { 
-                self.delegate?.truckFinishedSaving()
-            })
         }
     }
 }
 
 protocol SaveTruckProtocol {
-    func truckFinishedSaving()
+    func truckFinishedSaving(record: CKRecord?)
 }
