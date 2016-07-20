@@ -27,6 +27,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         locationManager.delegate = self
+//        UserController.removeUser()
         
         LocationManager.shared.setUpMapView(mapView, locationManager: locationManager)
         
@@ -38,7 +39,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-                        
+        
         guard let signupViewController = storyboard?.instantiateViewControllerWithIdentifier("navigationController") else { return }
         guard (UserController.getUserID() != nil) else { presentViewController(signupViewController, animated: true, completion: nil); return }
     }
