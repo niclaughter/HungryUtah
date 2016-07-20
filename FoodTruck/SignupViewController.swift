@@ -64,14 +64,18 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
         if segmentedControl.selectedSegmentIndex == 0 {
             //individual user
-            guard let first = firstNameTextField.text, last = lastNameTextField.text where first.characters.count > 0 && last.characters.count > 0 else { showAlert(); return }
+            guard let first = firstNameTextField.text, last = lastNameTextField.text where first.characters.count > 0 && last.characters.count > 0 else { showAlert("Please Enter Data For All Fields"); return }
             UserController.saveUserToCloudKit(first, lastName: last, email: nil, truckReference: nil)
-            //TODO: segue to map
+            dismissViewControllerAnimated(true, completion: nil)
         } else {
             //food truck
-            guard let first = firstNameTextField.text, last = lastNameTextField.text, email = emailTextField.text, truck = selectedTruck where first.characters.count > 0 && last.characters.count > 0 && email.characters.count > 0 else { showAlert(); return }
-            UserController.saveUserToCloudKit(first, lastName: last, email: email, truckReference: truck.reference)
-            //TODO: segue to map
+            guard let first = firstNameTextField.text, last = lastNameTextField.text, email = emailTextField.text, truck = selectedTruck where first.characters.count > 0 && last.characters.count > 0 && email.characters.count > 0 else { showAlert("Please Enter Data For All Fields"); return }
+            if validateEmail(email) {
+                UserController.saveUserToCloudKit(first, lastName: last, email: email, truckReference: truck.reference)
+                dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                showAlert("Invalid Email")
+            }
         }
     }
     
@@ -90,8 +94,8 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         emailTextField.hidden = true
     }
     
-    func showAlert() {
-        let alert = UIAlertController(title: "Error", message: "Please Enter Data For All Fields", preferredStyle: .Alert)
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alert.addAction(okAction)
         presentViewController(alert, animated: true, completion: nil)
@@ -157,6 +161,11 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func validateEmail(candidate: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
     }
 }
 
