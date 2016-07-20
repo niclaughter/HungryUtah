@@ -61,6 +61,11 @@ class UserController {
         CloudKitManager.sharedManager.saveRecord(record) { (record, error) in
             if let error = error {
                 print("Error saving User to CloudKit - \(error.localizedDescription)")
+            } else {
+                if let appDelegate  = UIApplication.sharedApplication().delegate as? AppDelegate,
+                    let currentVC = appDelegate.window!.rootViewController as? MapViewController {
+                    currentVC.postButtonEnableDisable()
+                }
             }
         }
     }
