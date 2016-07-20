@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213E43461D3ED9C900932AA3 /* NewTruckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E43451D3ED9C900932AA3 /* NewTruckViewController.swift */; };
+		213E43481D3EE4BC00932AA3 /* TruckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E43471D3EE4BC00932AA3 /* TruckController.swift */; };
+		213E434A1D3EE72E00932AA3 /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213E43491D3EE72E00932AA3 /* Truck.swift */; };
+		21B35DAF1D3FD775002497CF /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B35DAE1D3FD775002497CF /* PostController.swift */; };
+		21BF58FC1D3EFA0400F38BFE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BF58FB1D3EFA0400F38BFE /* CloudKit.framework */; };
 		21EEFEED1D3E819C00224C80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFEEC1D3E819C00224C80 /* AppDelegate.swift */; };
 		21EEFEF21D3E819D00224C80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EEFEF01D3E819D00224C80 /* Main.storyboard */; };
 		21EEFEF41D3E819D00224C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EEFEF31D3E819D00224C80 /* Assets.xcassets */; };
@@ -15,12 +20,18 @@
 		21EEFF011D3E823F00224C80 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF001D3E823F00224C80 /* SignupViewController.swift */; };
 		21EEFF051D3E9D9400224C80 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF041D3E9D9400224C80 /* CloudKitManager.swift */; };
 		21EEFF0B1D3EA03400224C80 /* TruckLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */; };
-		66D416E41D3EA19400B286CA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D416E31D3EA19400B286CA /* LocationManager.swift */; };
-		66D416E71D3EA7DE00B286CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D416E61D3EA7DE00B286CA /* MapKit.framework */; };
-		66D416EA1D3EA7FA00B286CA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D416E91D3EA7FA00B286CA /* CloudKit.framework */; };
+		21EEFF0F1D3EA13800224C80 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF0E1D3EA13800224C80 /* UserController.swift */; };
+		6689050C1D3FDDDD009430B3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689050B1D3FDDDD009430B3 /* LocationManager.swift */; };
+		6689050F1D3FDE29009430B3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6689050E1D3FDE29009430B3 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		213E43451D3ED9C900932AA3 /* NewTruckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTruckViewController.swift; sourceTree = "<group>"; };
+		213E43471D3EE4BC00932AA3 /* TruckController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckController.swift; sourceTree = "<group>"; };
+		213E43491D3EE72E00932AA3 /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
+		21B35DAE1D3FD775002497CF /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		21BF58FA1D3EF98000F38BFE /* FoodTruck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FoodTruck.entitlements; sourceTree = "<group>"; };
+		21BF58FB1D3EFA0400F38BFE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		21EEFEE91D3E819C00224C80 /* FoodTruck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTruck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EEFEEC1D3E819C00224C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21EEFEF11D3E819D00224C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,10 +42,9 @@
 		21EEFF001D3E823F00224C80 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		21EEFF041D3E9D9400224C80 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckLocation.swift; sourceTree = "<group>"; };
-		66D416E31D3EA19400B286CA /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		66D416E61D3EA7DE00B286CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		66D416E81D3EA7F600B286CA /* FoodTruck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FoodTruck.entitlements; sourceTree = "<group>"; };
-		66D416E91D3EA7FA00B286CA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		21EEFF0E1D3EA13800224C80 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		6689050B1D3FDDDD009430B3 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		6689050E1D3FDE29009430B3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,8 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66D416E71D3EA7DE00B286CA /* MapKit.framework in Frameworks */,
-				66D416EA1D3EA7FA00B286CA /* CloudKit.framework in Frameworks */,
+				6689050F1D3FDE29009430B3 /* MapKit.framework in Frameworks */,
+				21BF58FC1D3EFA0400F38BFE /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +63,8 @@
 		21EEFEE01D3E819C00224C80 = {
 			isa = PBXGroup;
 			children = (
-				66D416E91D3EA7FA00B286CA /* CloudKit.framework */,
-				66D416E61D3EA7DE00B286CA /* MapKit.framework */,
+				6689050E1D3FDE29009430B3 /* MapKit.framework */,
+				21BF58FB1D3EFA0400F38BFE /* CloudKit.framework */,
 				21EEFEEB1D3E819C00224C80 /* FoodTruck */,
 				21EEFEEA1D3E819C00224C80 /* Products */,
 			);
@@ -71,7 +81,7 @@
 		21EEFEEB1D3E819C00224C80 /* FoodTruck */ = {
 			isa = PBXGroup;
 			children = (
-				66D416E81D3EA7F600B286CA /* FoodTruck.entitlements */,
+				21BF58FA1D3EF98000F38BFE /* FoodTruck.entitlements */,
 				21EEFF0D1D3EA04C00224C80 /* Model */,
 				21EEFF0C1D3EA03D00224C80 /* ModelController */,
 				21EEFF081D3E9DB400224C80 /* StoryBoard */,
@@ -86,6 +96,7 @@
 			children = (
 				21EEFF001D3E823F00224C80 /* SignupViewController.swift */,
 				21EEFEFE1D3E822A00224C80 /* MapViewController.swift */,
+				213E43451D3ED9C900932AA3 /* NewTruckViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -120,8 +131,11 @@
 		21EEFF0C1D3EA03D00224C80 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				21EEFF0E1D3EA13800224C80 /* UserController.swift */,
+				213E43471D3EE4BC00932AA3 /* TruckController.swift */,
+				21B35DAE1D3FD775002497CF /* PostController.swift */,
+				6689050D1D3FDDE1009430B3 /* Location */,
 				21EEFF071D3E9DAD00224C80 /* CloudKit */,
-				66D416E51D3EA19800B286CA /* Location */,
 			);
 			name = ModelController;
 			sourceTree = "<group>";
@@ -130,14 +144,15 @@
 			isa = PBXGroup;
 			children = (
 				21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */,
+				213E43491D3EE72E00932AA3 /* Truck.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		66D416E51D3EA19800B286CA /* Location */ = {
+		6689050D1D3FDDE1009430B3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				66D416E31D3EA19400B286CA /* LocationManager.swift */,
+				6689050B1D3FDDDD009430B3 /* LocationManager.swift */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -222,12 +237,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21EEFF0F1D3EA13800224C80 /* UserController.swift in Sources */,
 				21EEFF011D3E823F00224C80 /* SignupViewController.swift in Sources */,
 				21EEFEED1D3E819C00224C80 /* AppDelegate.swift in Sources */,
-				66D416E41D3EA19400B286CA /* LocationManager.swift in Sources */,
+				6689050C1D3FDDDD009430B3 /* LocationManager.swift in Sources */,
 				21EEFF051D3E9D9400224C80 /* CloudKitManager.swift in Sources */,
 				21EEFEFF1D3E822A00224C80 /* MapViewController.swift in Sources */,
+				21B35DAF1D3FD775002497CF /* PostController.swift in Sources */,
+				213E43481D3EE4BC00932AA3 /* TruckController.swift in Sources */,
 				21EEFF0B1D3EA03400224C80 /* TruckLocation.swift in Sources */,
+				213E43461D3ED9C900932AA3 /* NewTruckViewController.swift in Sources */,
+				213E434A1D3EE72E00932AA3 /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +361,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FoodTruck/FoodTruck.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FoodTruck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.FoodTruck;
+				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.HungryUtah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -353,10 +376,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FoodTruck/FoodTruck.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FoodTruck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.devmountain.FoodTruck;
+				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.HungryUtah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -40,7 +40,7 @@
 		<string>MKDirectionsModePedestrian</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need to see where you are to show you nearby food trucks.</string>
+	<string>Let us know where you are, but only when you use the app, cause we&apos;re not creepy.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

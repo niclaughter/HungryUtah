@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-yF-gca">
-                                <rect key="frame" x="20" y="131" width="560" height="388"/>
+                                <rect key="frame" x="20" y="88" width="560" height="236"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uyi-LS-81U">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
@@ -51,32 +51,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7ws-HB-Mbn">
-                                        <rect key="frame" x="0.0" y="258" width="560" height="130"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SPT-MT-dHd">
-                                                <rect key="frame" x="215" y="0.0" width="130" height="130"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="130" id="2xC-lf-tck"/>
-                                                    <constraint firstAttribute="width" constant="130" id="wAW-In-5e5"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="aRh-pW-8FQ" appends="YES" id="bWm-iq-ibZ"/>
-                                                </connections>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="LsG-yF-gca" firstAttribute="centerY" secondItem="iA4-gq-JgL" secondAttribute="centerY" constant="25" id="DA0-tq-a9V"/>
+                            <constraint firstItem="LsG-yF-gca" firstAttribute="centerY" secondItem="iA4-gq-JgL" secondAttribute="centerY" constant="-94" id="DA0-tq-a9V"/>
                             <constraint firstItem="LsG-yF-gca" firstAttribute="centerX" secondItem="iA4-gq-JgL" secondAttribute="centerX" id="NYI-nY-9cN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LsG-yF-gca" secondAttribute="trailing" id="ZoJ-uN-Fp1"/>
                             <constraint firstItem="LsG-yF-gca" firstAttribute="leading" secondItem="iA4-gq-JgL" secondAttribute="leadingMargin" id="yHG-pO-4KY"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eUh-t6-FEv" appends="YES" id="jyn-Vq-z2A"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="K4k-N4-yxw">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="nmn-OY-gi1">
@@ -90,18 +78,95 @@
                         <outlet property="firstNameTextField" destination="hrV-Nw-rTH" id="aHZ-ZL-wDX"/>
                         <outlet property="foodTruckTextField" destination="eYI-X8-8vF" id="0tp-nR-Nzc"/>
                         <outlet property="lastNameTextField" destination="POV-vZ-uQi" id="Ul0-5i-wyf"/>
+                        <outlet property="pickerView" destination="FFw-Fa-az4" id="tUA-Db-fT9"/>
                         <outlet property="segmentedControl" destination="uyi-LS-81U" id="kit-97-iBl"/>
-                        <outlet property="truckImageView" destination="SPT-MT-dHd" id="Q86-Gl-4Bb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igb-UC-rM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="aRh-pW-8FQ">
+                <pickerView contentMode="scaleToFill" id="FFw-Fa-az4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <connections>
-                        <action selector="truckImageTapped:" destination="WMT-qu-kdc" id="bCj-eq-R9f"/>
+                        <outlet property="dataSource" destination="WMT-qu-kdc" id="OlQ-lw-ZZz"/>
+                        <outlet property="delegate" destination="WMT-qu-kdc" id="6tQ-zo-lFm"/>
+                    </connections>
+                </pickerView>
+                <tapGestureRecognizer id="eUh-t6-FEv">
+                    <connections>
+                        <action selector="screenTapped:" destination="WMT-qu-kdc" id="P11-k7-Ou6"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2353" y="938"/>
+        </scene>
+        <!--Add New Truck-->
+        <scene sceneID="2IZ-Wy-X5W">
+            <objects>
+                <viewController storyboardIdentifier="newTruck" id="cCo-Jj-oeL" customClass="NewTruckViewController" customModule="FoodTruck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7rZ-ni-GB4"/>
+                        <viewControllerLayoutGuide type="bottom" id="LZe-J8-7lL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tOl-qi-bew">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Truck Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2eh-3M-nQh">
+                                <rect key="frame" x="20" y="95" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d6S-UT-vmG">
+                                <rect key="frame" x="175" y="133" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="FpM-ba-9ng"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-Kl-QyI">
+                                <rect key="frame" x="175" y="133" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="bem-t9-njR"/>
+                                </constraints>
+                                <state key="normal" title="Select Photo"/>
+                                <connections>
+                                    <action selector="selectPhotoButtonTapped:" destination="cCo-Jj-oeL" eventType="touchUpInside" id="jzT-3g-H8O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LZe-J8-7lL" firstAttribute="top" secondItem="d6S-UT-vmG" secondAttribute="bottom" constant="217" id="BJn-Pa-Xih"/>
+                            <constraint firstItem="d6S-UT-vmG" firstAttribute="top" secondItem="2eh-3M-nQh" secondAttribute="bottom" constant="8" symbolic="YES" id="FaL-fu-y42"/>
+                            <constraint firstItem="2eh-3M-nQh" firstAttribute="leading" secondItem="tOl-qi-bew" secondAttribute="leadingMargin" id="GWG-Ig-zGY"/>
+                            <constraint firstItem="2eh-3M-nQh" firstAttribute="trailing" secondItem="tOl-qi-bew" secondAttribute="trailingMargin" id="ORZ-t3-kzL"/>
+                            <constraint firstItem="2eh-3M-nQh" firstAttribute="top" secondItem="7rZ-ni-GB4" secondAttribute="bottom" constant="31" id="ZeH-S1-KGJ"/>
+                            <constraint firstItem="GFC-Kl-QyI" firstAttribute="leading" secondItem="d6S-UT-vmG" secondAttribute="leading" id="fNp-IH-Vfj"/>
+                            <constraint firstItem="GFC-Kl-QyI" firstAttribute="top" secondItem="d6S-UT-vmG" secondAttribute="top" id="flv-nU-PIU"/>
+                            <constraint firstItem="2eh-3M-nQh" firstAttribute="centerX" secondItem="d6S-UT-vmG" secondAttribute="centerX" id="lX0-qg-HsQ"/>
+                            <constraint firstItem="GFC-Kl-QyI" firstAttribute="trailing" secondItem="d6S-UT-vmG" secondAttribute="trailing" id="uM0-L9-9uT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Truck" id="C3g-YG-gFa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BUd-Uf-NoX">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="cCo-Jj-oeL" id="v1X-x3-Zl6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qI0-Fn-vvh">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="cCo-Jj-oeL" id="35J-k3-Gte"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="d6S-UT-vmG" id="ttA-ys-4nl"/>
+                        <outlet property="nameTextField" destination="2eh-3M-nQh" id="dUn-xK-Dfd"/>
+                        <outlet property="selectImageButton" destination="GFC-Kl-QyI" id="rHv-bR-Lhl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alK-Kp-t1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2353" y="1718"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="8gG-MX-Lk9">
@@ -117,19 +182,12 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-P7-VcK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <outlet property="delegate" destination="U6j-KH-Cn0" id="iHq-Dv-55s"/>
-                                </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnd-by-VJ4">
-                                <rect key="frame" x="536" y="536" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="KD2-wp-lkz"/>
-                                    <constraint firstAttribute="height" constant="44" id="Zbe-PX-bex"/>
-                                </constraints>
-                                <state key="normal" image="navigationImage"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csg-4S-c2b">
+                                <rect key="frame" x="534" y="550" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="gCu-bW-dME"/>
+                                    <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="TOq-ND-egh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -139,17 +197,15 @@
                             <constraint firstAttribute="trailing" secondItem="i2S-P7-VcK" secondAttribute="trailing" id="Ov8-Zg-wml"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="bottom" secondItem="ba5-fB-SAm" secondAttribute="top" id="URf-B1-FFp"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="top" secondItem="dsk-Il-TLn" secondAttribute="top" id="W9G-37-sgK"/>
-                            <constraint firstItem="ba5-fB-SAm" firstAttribute="top" secondItem="gnd-by-VJ4" secondAttribute="bottom" constant="20" id="wtm-xC-RqG"/>
-                            <constraint firstAttribute="trailing" secondItem="gnd-by-VJ4" secondAttribute="trailing" constant="20" id="zaB-Ju-tB0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="i2S-P7-VcK" id="LbJ-3b-1tN"/>
+                        <outlet property="mapView" destination="i2S-P7-VcK" id="nqY-7B-LV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4H-A3-8sj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="214"/>
+            <point key="canvasLocation" x="1857" y="258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8YO-XT-M4F">
@@ -163,6 +219,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="WMT-qu-kdc" kind="relationship" relationship="rootViewController" id="I1l-MT-N9O"/>
+                        <segue destination="cCo-Jj-oeL" kind="show" identifier="newTruck" id="yvh-if-adL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xqh-Ef-Uag" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,7 +227,4 @@
             <point key="canvasLocation" x="1654" y="938"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="navigationImage" width="25" height="25"/>
-    </resources>
 </document>
