@@ -12,6 +12,8 @@ import MapKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
+    var trucks: [Truck] = []
+    
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     
@@ -27,6 +29,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         
         LocationManager.shared.setUpMapView(mapView, locationManager: locationManager)
+        
+        for truckInfo in TruckController.sharedController.truckInfos {
+            let annotation = Annotation(title: truckInfo.name, coordinate: truckInfo.location)
+            mapView.addAnnotation(annotation)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

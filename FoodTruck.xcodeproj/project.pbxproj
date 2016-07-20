@@ -21,6 +21,7 @@
 		21EEFF051D3E9D9400224C80 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF041D3E9D9400224C80 /* CloudKitManager.swift */; };
 		21EEFF0B1D3EA03400224C80 /* TruckLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */; };
 		21EEFF0F1D3EA13800224C80 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEFF0E1D3EA13800224C80 /* UserController.swift */; };
+		660A26561D4009F200F1A62E /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A26551D4009F200F1A62E /* Annotation.swift */; };
 		6689050C1D3FDDDD009430B3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689050B1D3FDDDD009430B3 /* LocationManager.swift */; };
 		6689050F1D3FDE29009430B3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6689050E1D3FDE29009430B3 /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		21EEFF041D3E9D9400224C80 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		21EEFF0A1D3EA03400224C80 /* TruckLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckLocation.swift; sourceTree = "<group>"; };
 		21EEFF0E1D3EA13800224C80 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		660A26551D4009F200F1A62E /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		6689050B1D3FDDDD009430B3 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6689050E1D3FDE29009430B3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				21EEFEF31D3E819D00224C80 /* Assets.xcassets */,
 				21EEFEF51D3E819D00224C80 /* LaunchScreen.storyboard */,
 				21EEFEF81D3E819D00224C80 /* Info.plist */,
+				660A26551D4009F200F1A62E /* Annotation.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				213E43481D3EE4BC00932AA3 /* TruckController.swift in Sources */,
 				21EEFF0B1D3EA03400224C80 /* TruckLocation.swift in Sources */,
 				213E43461D3ED9C900932AA3 /* NewTruckViewController.swift in Sources */,
+				660A26561D4009F200F1A62E /* Annotation.swift in Sources */,
 				213E434A1D3EE72E00932AA3 /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

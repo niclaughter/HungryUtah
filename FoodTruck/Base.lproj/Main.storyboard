@@ -183,9 +183,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-P7-VcK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csg-4S-c2b">
-                                <rect key="frame" x="534" y="550" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csg-4S-c2b">
+                                <rect key="frame" x="538" y="538" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="0dO-5o-F6V"/>
+                                    <constraint firstAttribute="height" constant="42" id="mYD-CH-B3F"/>
+                                </constraints>
+                                <state key="normal" image="centerOnUserLocationImage"/>
                                 <connections>
                                     <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="TOq-ND-egh"/>
                                 </connections>
@@ -194,9 +198,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="leading" secondItem="dsk-Il-TLn" secondAttribute="leading" id="7Fq-gx-TCw"/>
+                            <constraint firstItem="ba5-fB-SAm" firstAttribute="top" secondItem="csg-4S-c2b" secondAttribute="bottom" constant="20" id="Ml4-EE-ERC"/>
                             <constraint firstAttribute="trailing" secondItem="i2S-P7-VcK" secondAttribute="trailing" id="Ov8-Zg-wml"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="bottom" secondItem="ba5-fB-SAm" secondAttribute="top" id="URf-B1-FFp"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="top" secondItem="dsk-Il-TLn" secondAttribute="top" id="W9G-37-sgK"/>
+                            <constraint firstAttribute="trailing" secondItem="csg-4S-c2b" secondAttribute="trailing" constant="20" id="bOH-2Z-iqR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -227,4 +233,7 @@
             <point key="canvasLocation" x="1654" y="938"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="centerOnUserLocationImage" width="42" height="42"/>
+    </resources>
 </document>
