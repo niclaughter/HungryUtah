@@ -194,19 +194,26 @@
                                     <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="TOq-ND-egh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-wU-zjh">
+                                <rect key="frame" x="549" y="40" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="leading" secondItem="dsk-Il-TLn" secondAttribute="leading" id="7Fq-gx-TCw"/>
+                            <constraint firstAttribute="trailing" secondItem="PTp-wU-zjh" secondAttribute="trailing" constant="20" id="MhV-ld-juc"/>
                             <constraint firstItem="ba5-fB-SAm" firstAttribute="top" secondItem="csg-4S-c2b" secondAttribute="bottom" constant="20" id="Ml4-EE-ERC"/>
                             <constraint firstAttribute="trailing" secondItem="i2S-P7-VcK" secondAttribute="trailing" id="Ov8-Zg-wml"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="bottom" secondItem="ba5-fB-SAm" secondAttribute="top" id="URf-B1-FFp"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="top" secondItem="dsk-Il-TLn" secondAttribute="top" id="W9G-37-sgK"/>
                             <constraint firstAttribute="trailing" secondItem="csg-4S-c2b" secondAttribute="trailing" constant="20" id="bOH-2Z-iqR"/>
+                            <constraint firstItem="PTp-wU-zjh" firstAttribute="top" secondItem="QmX-vJ-22U" secondAttribute="bottom" constant="20" id="fiH-dC-lWW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="i2S-P7-VcK" id="nqY-7B-LV2"/>
+                        <outlet property="postButton" destination="PTp-wU-zjh" id="GfZ-U7-XID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4H-A3-8sj" userLabel="First Responder" sceneMemberID="firstResponder"/>

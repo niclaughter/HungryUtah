@@ -16,6 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var postButton: UIButton!
     
     @IBAction func centerMapOnUserLocationButtonTapped(sender: AnyObject) {
         guard let location = locationManager.location else { return }
@@ -28,6 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.delegate = self
 //        UserController.removeUser()
+        postButtonEnableDisable()
         
         LocationManager.shared.setUpMapView(mapView, locationManager: locationManager)
         
@@ -47,7 +49,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func postButtonEnableDisable() {
+        UserController.checkIfUserHasTruck { (result) in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.postButton.hidden = !result
+            })
+        }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
