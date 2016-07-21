@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MapKit
+import CloudKit
 
 class TruckLocation {
     let name: String
@@ -21,5 +22,17 @@ class TruckLocation {
         self.image = image
         self.expirationDate = expirationDate
         self.location = location
+    }
+    
+    init?(truckRecord: CKRecord, locationRecord: CKRecord) {
+        guard let name = truckRecord["Name"] as? String,
+            let imageAsset = truckRecord["Image"] as? CKAsset,
+            let image = imageFromAsset(imageAsset),
+            let location = locationRecord["Location"] as? CLLocation,
+            let expirationDate = locationRecord["ExpireDate"] as? NSDate else { return nil }
+        self.name = name
+        self.image = image
+        self.location = location
+        self.expirationDate = expirationDate
     }
 }

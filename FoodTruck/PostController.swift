@@ -19,6 +19,7 @@ class PostController {
                 print("Error fetching User \(error.localizedDescription)")
             } else if let record = record,
                 let truckReference = record["Truck"] as? CKReference {
+                removeLocationObjectFromCK(truckReference.recordID)
                 let newID = NSUUID().UUIDString
                 let newRecordID = CKRecordID(recordName: newID)
                 let newRecord = CKRecord(recordType: "Location", recordID: newRecordID)
@@ -27,7 +28,28 @@ class PostController {
                 newRecord["DateCreated"] = dateCreated
                 newRecord["ExpireDate"] = expirationDate
                 newRecord["CreatedBy"] = CKReference(record: record, action: .DeleteSelf)
+                CloudKitManager.sharedManager.saveRecord(newRecord, completion: { (record, error) in
+                    if let error = error {
+                        print("An error occured while trying to save a new Location Object to CK \(error.localizedDescription)")
+                    }
+                })
             }
         }
     }
+    
+    static func removeLocationObjectFromCK(truckRecordID: CKRecordID) {
+        let predicate = NSPredicate(format: "Truck == %@", argumentArray: [truckRecordID])
+        CloudKitManager.sharedManager.fetchRecordsWithType("Location", predicate: predicate, recordFetchedBlock: nil) { (records, error) in
+            if let records = records, record = records.first {
+                CloudKitManager.sharedManager.deleteRecordWithID(record.recordID, completion: { (recordID, error) in
+                    if let error = error {
+                        print("An error occured while trying to remove a truck's previous location object from CK = \(error.localizedDescription)")
+                    }
+                })
+            } else if let error = error {
+                print("Either there wasn't a previous location record to delete (which is fine), or an error occured - \(error.localizedDescription)")
+            }
+        }
+    }
+    
 }

@@ -14,7 +14,6 @@ import CloudKit
 class TruckController {
     
     static let sharedController = TruckController()
-    var truckInfos: [TruckLocation] = []
     var delegate: SaveTruckProtocol?
     
     func saveTruck(name: String, image: NSData) {
@@ -28,6 +27,7 @@ class TruckController {
         let fileURL = temporaryDirectoryURL.URLByAppendingPathComponent(id).URLByAppendingPathExtension("jpg")
         image.writeToURL(fileURL, atomically: true)
         record["Image"] = CKAsset(fileURL: fileURL)
+        record["TruckID"] = id
         
         CloudKitManager.sharedManager.saveRecord(record) { (record, error) in
             if let error = error {
@@ -43,21 +43,37 @@ class TruckController {
         }
     }
     
-    func fetchTruckLocations() {
-        CloudKitManager.sharedManager.fetchRecordsWithType(CloudKitManager.RecordTypes.location.rawValue, recordFetchedBlock: { (locationRecord) in
-            guard let truckReference = locationRecord["Truck"] as? CKReference else { return }
-            CloudKitManager.sharedManager.fetchRecordWithID(truckReference.recordID, completion: { (record, error) in
-                guard let truckRecord = record,
-                    name = truckRecord["Name"] as? String,
-                    imageAsset = truckRecord["Image"] as? CKAsset,
-                    image = imageFromAsset(imageAsset),
-                    location = locationRecord["Location"] as? CLLocation,
-                    expirationDate = locationRecord["ExpireDate"] as? NSDate else { return }
-                let truckLocation = TruckLocation(name: name, image: image, expirationDate: expirationDate, location: location)
-                self.truckInfos.append(truckLocation)
-            })
-            }, completion: nil)
+    static func fetchAllTruckLocationRecords(completion: (trucks: [TruckLocation]) -> Void) {
+        let timePredicate = NSPredicate(format: "ExpireDate >= %@", argumentArray: [NSDate()])
+        CloudKitManager.sharedManager.fetchRecordsWithType("Location", predicate: timePredicate, recordFetchedBlock: nil) { (records, error) in
+            if let records = records {
+                var truckLocation = [TruckLocation]()
+                let group = dispatch_group_create()
+                for locationRecord in records {
+                    dispatch_group_enter(group)
+                    if let truckReference = locationRecord["Truck"] as? CKReference {
+                        let predicate = NSPredicate(format: "TruckID == %@", argumentArray: [truckReference.recordID.recordName])
+                        CloudKitManager.sharedManager.fetchRecordsWithType("Truck", predicate: predicate, recordFetchedBlock: { (truckRecord) in
+                            let truck = TruckLocation(truckRecord: truckRecord, locationRecord: locationRecord)
+                            if let truck = truck {
+                                truckLocation.append(truck)
+                            }
+                            dispatch_group_leave(group)
+                            }, completion: nil)
+                    } else {
+                        dispatch_group_leave(group)
+                    }
+                }
+                
+                dispatch_group_notify(group, dispatch_get_main_queue(), {
+                    completion(trucks: truckLocation)
+                })
+            } else if let error = error {
+                print("Error fetching all Truck Location Objects from CK - \(error.localizedDescription)")
+            }
+        }
     }
+
 }
 
 func imageFromAsset(asset: CKAsset) -> UIImage? {
