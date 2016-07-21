@@ -10,9 +10,13 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    var trucks: [Truck] = []
+    var truckLocations: [TruckLocation] = [] {
+        didSet {
+            addAnnotationsForTrucksWhenSet()
+        }
+    }
     
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
@@ -40,6 +44,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    func addAnnotationsForTrucksWhenSet() {
+        for truckLocation in truckLocations {
+            let info = CustomPointAnnotation()
+            info.coordinate = truckLocation.location.coordinate
+            info.title = truckLocation.name
+            info.image = truckLocation.image
+            
+            mapView.addAnnotation(info)
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -61,6 +76,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 self.postButton.hidden = !result
             })
         }
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !annotation.isKindOfClass(CustomPointAnnotation) else { return nil }
+        
+        let reuseID = "customAnnotation"
+        
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID)
+        if let annotationView = annotationView {
+            annotationView.annotation = annotation
+        } else {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            annotationView?.canShowCallout = true
+        }
+        
+        guard let cpa = annotation as? CustomPointAnnotation else { return nil }
+        annotationView?.image = cpa.image
+        annotationView?.backgroundColor = UIColor.whiteColor()
+        
+        return annotationView
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -111,3 +146,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 
+class CustomPointAnnotation: MKPointAnnotation {
+    var image: UIImage!
+}
