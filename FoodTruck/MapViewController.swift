@@ -33,14 +33,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         
         locationManager.delegate = self
+        mapView.delegate = self
 //        UserController.removeUser()
         postButtonEnableDisable()
         
         LocationManager.shared.setUpMapView(mapView, locationManager: locationManager)
         
-        for truckInfo in TruckController.sharedController.truckInfos {
-            let annotation = Annotation(title: truckInfo.name, coordinate: truckInfo.location)
-            mapView.addAnnotation(annotation)
+        TruckController.fetchAllTruckLocationRecords { (trucks) in
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.truckLocations = trucks
+            })
         }
     }
     
@@ -49,6 +51,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let info = CustomPointAnnotation()
             info.coordinate = truckLocation.location.coordinate
             info.title = truckLocation.name
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            info.subtitle = "Here until \(dateFormatter.stringFromDate(truckLocation.expirationDate))"
             info.image = truckLocation.image
             
             mapView.addAnnotation(info)
@@ -78,8 +83,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
+    // MARK: - MKMapViewDelegate
+    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !annotation.isKindOfClass(CustomPointAnnotation) else { return nil }
+//        guard !annotation.isKindOfClass(CustomPointAnnotation) else { return nil }
         
         let reuseID = "customAnnotation"
         
@@ -93,6 +100,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         guard let cpa = annotation as? CustomPointAnnotation else { return nil }
         annotationView?.image = cpa.image
+        annotationView?.contentMode = .ScaleAspectFill
+        annotationView?.frame = CGRectMake(0, 0, 22, 22)
         annotationView?.backgroundColor = UIColor.whiteColor()
         
         return annotationView
