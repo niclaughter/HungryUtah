@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.sharedApplication().registerForRemoteNotifications()
         return true
     }
 
@@ -40,7 +42,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        guard let notificationInfo = userInfo as? [String: NSObject] else { return }
+        let notification = CKQueryNotification(fromRemoteNotificationDictionary: notificationInfo)
+        guard let recordID = notification.recordID else { return }
+        
+        CloudKitManager.sharedManager.fetchRecordWithID(recordID) { (locationRecord, error) in
+            if let locationRecord = locationRecord,
+                let truckReference = locationRecord["Truck"] as? CKReference {
+                CloudKitManager.sharedManager.fetchRecordWithID(truckReference.recordID, completion: { (truckRecord, error) in
+                    if let truckRecord = truckRecord {
+                        let truck = TruckLocation(truckRecord: truckRecord, locationRecord: locationRecord)
+                        if let truck = truck {
+                            if let view = self.window?.rootViewController as? MapViewController {
+                                view.truckLocations.append(truck)
+                            }
+                        }
+                    } else if let error = error {
+                        print("Error fetching truck record from subscription \(error.localizedDescription)")
+                    }
+                })
+            } else if let error = error {
+                print("Error fetching subscription location - \(error.localizedDescription)")
+            }
+        }
+        
+        completionHandler(UIBackgroundFetchResult.NewData)
+    }
 }
 
