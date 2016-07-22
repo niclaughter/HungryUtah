@@ -30,7 +30,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
@@ -40,7 +40,7 @@
 		<string>MKDirectionsModePedestrian</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Let us know where you are, but only when you use the app, cause we&apos;re not creepy.</string>
+	<string>Let us know where you are, but only when you use the app, cause we're not creepy.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
