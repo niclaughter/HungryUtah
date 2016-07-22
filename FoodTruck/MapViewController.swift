@@ -36,6 +36,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.delegate = self
 //        UserController.removeUser()
         postButtonEnableDisable()
+        PostController.createSubscription()
         
         LocationManager.shared.setUpMapView(mapView, locationManager: locationManager)
         

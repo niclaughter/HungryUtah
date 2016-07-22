@@ -52,4 +52,17 @@ class PostController {
         }
     }
     
+    static func createSubscription() {
+        CloudKitManager.sharedManager.fetchSubscriptions { (subscriptions, error) in
+            if subscriptions?.count > 0 {} else {
+                let predicate = NSPredicate(value: true)
+                CloudKitManager.sharedManager.subscribe("Location", predicate: predicate, identifier: NSUUID().UUIDString, contentAvailable: true, options: .FiresOnRecordCreation, completion: { (subscription, error) in
+                    if let error = error {
+                        print("Error subscribing to locations - \(error.localizedDescription)")
+                    }
+                })
+            }
+        }
+    }
+    
 }
