@@ -185,12 +185,11 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csg-4S-c2b">
                                 <rect key="frame" x="538" y="538" width="42" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="0dO-5o-F6V"/>
                                     <constraint firstAttribute="height" constant="42" id="mYD-CH-B3F"/>
                                 </constraints>
-                                <state key="normal" image="centerOnUserLocationImage"/>
+                                <state key="normal" image="compass"/>
                                 <connections>
                                     <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="TOq-ND-egh"/>
                                 </connections>
@@ -257,6 +256,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="centerOnUserLocationImage" width="42" height="42"/>
+        <image name="compass" width="42" height="42"/>
     </resources>
 </document>

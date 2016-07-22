@@ -98,7 +98,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
             annotationView?.canShowCallout = true
-            annotationView?.rightCalloutAccessoryView = UIButton.init(type: .DetailDisclosure) as UIButton
+            let button = UIButton.init(type: .Custom)
+            button.setImage(UIImage(named: "car"), forState: .Normal)
+            button.frame = CGRectMake(0, 0, 44, 44)
+            annotationView?.rightCalloutAccessoryView = button
         }
         
         guard let cpa = annotation as? CustomPointAnnotation else { return nil }
@@ -109,6 +112,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         return annotationView
     }
+    
+    
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let selectedLocation = view.annotation
