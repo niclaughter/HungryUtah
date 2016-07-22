@@ -56,6 +56,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             info.subtitle = "Here until \(dateFormatter.stringFromDate(truckLocation.expirationDate))"
             info.image = truckLocation.image
             
+            
             mapView.addAnnotation(info)
         }
     }
@@ -96,6 +97,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
             annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton.init(type: .DetailDisclosure) as UIButton
         }
         
         guard let cpa = annotation as? CustomPointAnnotation else { return nil }
@@ -105,6 +107,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         annotationView?.backgroundColor = UIColor.whiteColor()
         
         return annotationView
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let selectedLocation = view.annotation
+        let currentLocationMapItem = MKMapItem.mapItemForCurrentLocation()
+        if let coordinate = selectedLocation?.coordinate {
+            let selectedPlacemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+            let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
+            let mapItems = [selectedMapItem, currentLocationMapItem]
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            MKMapItem.openMapsWithItems(mapItems, launchOptions: launchOptions)
+        }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
