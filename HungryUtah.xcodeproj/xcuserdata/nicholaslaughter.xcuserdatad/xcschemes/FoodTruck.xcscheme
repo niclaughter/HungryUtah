@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21EEFEE81D3E819C00224C80"
-               BuildableName = "FoodTruck.app"
-               BlueprintName = "FoodTruck"
-               ReferencedContainer = "container:FoodTruck.xcodeproj">
+               BuildableName = "HungryUtah.app"
+               BlueprintName = "HungryUtah"
+               ReferencedContainer = "container:HungryUtah.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21EEFEE81D3E819C00224C80"
-            BuildableName = "FoodTruck.app"
-            BlueprintName = "FoodTruck"
-            ReferencedContainer = "container:FoodTruck.xcodeproj">
+            BuildableName = "HungryUtah.app"
+            BlueprintName = "HungryUtah"
+            ReferencedContainer = "container:HungryUtah.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21EEFEE81D3E819C00224C80"
-            BuildableName = "FoodTruck.app"
-            BlueprintName = "FoodTruck"
-            ReferencedContainer = "container:FoodTruck.xcodeproj">
+            BuildableName = "HungryUtah.app"
+            BlueprintName = "HungryUtah"
+            ReferencedContainer = "container:HungryUtah.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21EEFEE81D3E819C00224C80"
-            BuildableName = "FoodTruck.app"
-            BlueprintName = "FoodTruck"
-            ReferencedContainer = "container:FoodTruck.xcodeproj">
+            BuildableName = "HungryUtah.app"
+            BlueprintName = "HungryUtah"
+            ReferencedContainer = "container:HungryUtah.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

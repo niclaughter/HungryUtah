@@ -33,7 +33,7 @@
 		21B35DAE1D3FD775002497CF /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		21BF58FA1D3EF98000F38BFE /* FoodTruck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FoodTruck.entitlements; sourceTree = "<group>"; };
 		21BF58FB1D3EFA0400F38BFE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		21EEFEE91D3E819C00224C80 /* FoodTruck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTruck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21EEFEE91D3E819C00224C80 /* HungryUtah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HungryUtah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EEFEEC1D3E819C00224C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21EEFEF11D3E819D00224C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21EEFEF31D3E819D00224C80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		21EEFEEA1D3E819C00224C80 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21EEFEE91D3E819C00224C80 /* FoodTruck.app */,
+				21EEFEE91D3E819C00224C80 /* HungryUtah.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		21EEFEE81D3E819C00224C80 /* FoodTruck */ = {
+		21EEFEE81D3E819C00224C80 /* HungryUtah */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21EEFEFB1D3E819D00224C80 /* Build configuration list for PBXNativeTarget "FoodTruck" */;
+			buildConfigurationList = 21EEFEFB1D3E819D00224C80 /* Build configuration list for PBXNativeTarget "HungryUtah" */;
 			buildPhases = (
 				21EEFEE51D3E819C00224C80 /* Sources */,
 				21EEFEE61D3E819C00224C80 /* Frameworks */,
@@ -175,9 +175,9 @@
 			);
 			dependencies = (
 			);
-			name = FoodTruck;
+			name = HungryUtah;
 			productName = FoodTruck;
-			productReference = 21EEFEE91D3E819C00224C80 /* FoodTruck.app */;
+			productReference = 21EEFEE91D3E819C00224C80 /* HungryUtah.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 21EEFEE41D3E819C00224C80 /* Build configuration list for PBXProject "FoodTruck" */;
+			buildConfigurationList = 21EEFEE41D3E819C00224C80 /* Build configuration list for PBXProject "HungryUtah" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,7 +217,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				21EEFEE81D3E819C00224C80 /* FoodTruck */,
+				21EEFEE81D3E819C00224C80 /* HungryUtah */,
 			);
 		};
 /* End PBXProject section */
@@ -370,7 +370,7 @@
 				INFOPLIST_FILE = FoodTruck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.HungryUtah;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HungryUtah;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -385,7 +385,7 @@
 				INFOPLIST_FILE = FoodTruck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ninja.areios.HungryUtah;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HungryUtah;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21EEFEE41D3E819C00224C80 /* Build configuration list for PBXProject "FoodTruck" */ = {
+		21EEFEE41D3E819C00224C80 /* Build configuration list for PBXProject "HungryUtah" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21EEFEF91D3E819D00224C80 /* Debug */,
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21EEFEFB1D3E819D00224C80 /* Build configuration list for PBXNativeTarget "FoodTruck" */ = {
+		21EEFEFB1D3E819D00224C80 /* Build configuration list for PBXNativeTarget "HungryUtah" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21EEFEFC1D3E819D00224C80 /* Debug */,
