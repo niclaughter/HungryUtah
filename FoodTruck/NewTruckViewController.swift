@@ -63,8 +63,14 @@ class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
         guard let image = imageView.image,
             let name = nameTextField.text,
-            let imageData = UIImageJPEGRepresentation(image, 0.8),
             let signupController = signupController where name.characters.count > 0 else { showAlert("Please Select Photo and Enter Truck Name"); return }
+        
+        let newSize = CGSize(width: 44, height: 44)
+        UIGraphicsBeginImageContext(newSize)
+        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        let resizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
         var exists = false
         for truck in signupController.truckOptions {
             if truck.name.lowercaseString == name.lowercaseString {
@@ -73,9 +79,11 @@ class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
         if !exists {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            TruckController.sharedController.saveTruck(name, image: imageData)
-            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            if let resizedImageData = UIImageJPEGRepresentation(resizedImage, 0.8) {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+                TruckController.sharedController.saveTruck(name, image: resizedImageData)
+                UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            }
         }
     }
     
