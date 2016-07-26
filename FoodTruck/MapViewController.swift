@@ -24,6 +24,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet var timePicker: UIDatePicker!
     
     @IBAction func centerMapOnUserLocationButtonTapped(sender: AnyObject) {
+        if CLLocationManager.authorizationStatus() != .AuthorizedWhenInUse {
+            showLocationSettingsAlert()
+        }
         guard let location = locationManager.location else { return }
         mapView.centerCoordinate = location.coordinate
         mapView.userTrackingMode = .Follow
@@ -163,6 +166,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         dateTextField?.text = dateFormatter.stringFromDate(timePicker.date)
+    }
+    
+    // MARK: - UIAlertControllers
+    
+    func showLocationSettingsAlert() {
+        let alert = UIAlertController(title: "Location is Turned Off", message: "To see nearby food trucks, you'll need to enable location for this app.", preferredStyle: .Alert)
+        let openSettingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) in
+            if let url = NSURL(string: "prefs:root=LOCATION_SERVICES") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(openSettingsAction)
+        alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func showAlert(title: String, message: String) {
