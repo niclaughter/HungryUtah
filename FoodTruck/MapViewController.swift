@@ -28,7 +28,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             showLocationSettingsAlert()
         }
         guard let location = locationManager.location else { return }
-        mapView.centerCoordinate = location.coordinate
+        LocationManager.shared.updateMap(mapView, location: location)
         mapView.userTrackingMode = .Follow
     }
 
@@ -135,7 +135,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let timestamp = location.timestamp
         let howRecent = timestamp.timeIntervalSinceNow
         if abs(howRecent) > 15.0 {
-            LocationManager.shared.updateMap(mapView, location: location, region: MKCoordinateRegionMakeWithDistance(location.coordinate, 50, 50))
+            LocationManager.shared.updateMap(mapView, location: location)
         }
     }
     

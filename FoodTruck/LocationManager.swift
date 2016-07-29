@@ -22,14 +22,13 @@ class LocationManager {
         locationManager.startUpdatingLocation()
         
         guard let location = locationManager.location else { return }
-        let coordinateRegionWithMeters = MKCoordinateRegionMakeWithDistance(location.coordinate, 50, 50)
         
-        updateMap(mapView, location: location, region: coordinateRegionWithMeters)
+        updateMap(mapView, location: location)
     }
     
-    func updateMap(mapView: MKMapView, location: CLLocation, region: MKCoordinateRegion) {
+    func updateMap(mapView: MKMapView, location: CLLocation) {
         mapView.centerCoordinate = location.coordinate
         mapView.userTrackingMode = .Follow
-        mapView.region = region
+        mapView.region = MKCoordinateRegionMakeWithDistance(location.coordinate, 50, 50)
     }        
 }

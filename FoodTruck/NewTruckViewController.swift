@@ -65,7 +65,7 @@ class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate,
             let name = nameTextField.text,
             let signupController = signupController where name.characters.count > 0 else { showAlert("Please Select Photo and Enter Truck Name"); return }
         
-        let newSize = CGSize(width: 44, height: 44)
+        let newSize = CGSize(width: 66, height: 44)
         UIGraphicsBeginImageContext(newSize)
         image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
         let resizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -79,7 +79,7 @@ class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
         if !exists {
-            if let resizedImageData = UIImageJPEGRepresentation(resizedImage, 0.8) {
+            if let resizedImageData = UIImageJPEGRepresentation(resizedImage, 0.5) {
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                 TruckController.sharedController.saveTruck(name, image: resizedImageData)
                 UIApplication.sharedApplication().beginIgnoringInteractionEvents()

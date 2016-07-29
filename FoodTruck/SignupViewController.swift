@@ -87,6 +87,7 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         if sender.selectedSegmentIndex == 0 {
             hideFields()
         } else {
+            presentNewTruckAlert()
             foodTruckTextField.hidden = false
             emailTextField.hidden = false
         }
@@ -169,6 +170,15 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func validateEmail(candidate: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
+    }
+    
+    // MARK: - UIAlertContorller
+    
+    func presentNewTruckAlert() {
+        let alert = UIAlertController(title: "New Truck", message: "If you own a food truck, use this page to sign up to post your location.", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
 
