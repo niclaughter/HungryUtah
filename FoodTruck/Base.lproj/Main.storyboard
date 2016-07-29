@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U6j-KH-Cn0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U6j-KH-Cn0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,7 +9,7 @@
         <!--Sign Up-->
         <scene sceneID="VjO-Vb-9AW">
             <objects>
-                <viewController storyboardIdentifier="signupView" id="WMT-qu-kdc" customClass="SignupViewController" customModule="FoodTruck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signupView" id="WMT-qu-kdc" customClass="SignupViewController" customModule="HungryUtah" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Sv-5q-QLe"/>
                         <viewControllerLayoutGuide type="bottom" id="g3U-XX-PnT"/>
@@ -102,7 +102,7 @@
         <!--Add New Truck-->
         <scene sceneID="2IZ-Wy-X5W">
             <objects>
-                <viewController storyboardIdentifier="newTruck" id="cCo-Jj-oeL" customClass="NewTruckViewController" customModule="FoodTruck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newTruck" id="cCo-Jj-oeL" customClass="NewTruckViewController" customModule="HungryUtah" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7rZ-ni-GB4"/>
                         <viewControllerLayoutGuide type="bottom" id="LZe-J8-7lL"/>
@@ -174,7 +174,7 @@
         <!--Map View Controller-->
         <scene sceneID="8gG-MX-Lk9">
             <objects>
-                <viewController id="U6j-KH-Cn0" customClass="MapViewController" customModule="FoodTruck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U6j-KH-Cn0" customClass="MapViewController" customModule="HungryUtah" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QmX-vJ-22U"/>
                         <viewControllerLayoutGuide type="bottom" id="ba5-fB-SAm"/>

@@ -19,6 +19,7 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var truckOptions = [Truck]() {
         didSet {
+            pickerView.userInteractionEnabled = true
             truckOptions.sortInPlace({$0.name < $1.name})
         }
     }
@@ -28,6 +29,8 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerView.userInteractionEnabled = false
         loadTrucks()
         setupView()
         hideFields()

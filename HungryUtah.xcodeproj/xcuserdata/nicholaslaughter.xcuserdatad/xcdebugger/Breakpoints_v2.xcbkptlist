@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodTruck/NewTruckViewController.swift"
+            timestampString = "491259338.412543"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "truckFinishedSaving(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HungryUtah.NewTruckViewController.truckFinishedSaving (Swift.Optional&lt;__ObjC.CKRecord&gt;) -&gt; ()"
+                  moduleName = "HungryUtah"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholaslaughter/Desktop/DevMtn%20Projects/Capstone/HungryUtah/FoodTruck/NewTruckViewController.swift"
+                  timestampString = "491259501.900179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HungryUtah.NewTruckViewController.truckFinishedSaving (Swift.Optional&lt;__ObjC.CKRecord&gt;) -&gt; ()"
+                  moduleName = "HungryUtah"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicholaslaughter/Desktop/DevMtn%20Projects/Capstone/HungryUtah/FoodTruck/NewTruckViewController.swift"
+                  timestampString = "491259501.900503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
