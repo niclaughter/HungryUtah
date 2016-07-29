@@ -11,7 +11,7 @@ import MapKit
 import CloudKit
 
 class PostController {
-    static func postLocation(location: CLLocation, expirationDate: NSDate, dateCreated: NSDate = NSDate()) {
+    static func postLocation(location: CLLocation, expirationDate: NSDate, dateCreated: NSDate = NSDate(), completion: (truckLocation: TruckLocation?) -> Void) {
         guard let id = UserController.getUserID() else { return }
         let recordID = CKRecordID(recordName: id)
         CloudKitManager.sharedManager.fetchRecordWithID(recordID) { (record, error) in
@@ -28,9 +28,17 @@ class PostController {
                 newRecord["DateCreated"] = dateCreated
                 newRecord["ExpireDate"] = expirationDate
                 newRecord["CreatedBy"] = CKReference(record: record, action: .DeleteSelf)
+
                 CloudKitManager.sharedManager.saveRecord(newRecord, completion: { (record, error) in
                     if let error = error {
                         print("An error occured while trying to save a new Location Object to CK \(error.localizedDescription)")
+                    } else if let locationRecord = record {
+                        CloudKitManager.sharedManager.fetchRecordWithID(truckReference.recordID, completion: { (truckRecord, error) in
+                            if let truckRecord = truckRecord {
+                                let newTruck = TruckLocation(truckRecord: truckRecord, locationRecord: locationRecord)
+                                completion(truckLocation: newTruck)
+                            }
+                        })
                     }
                 })
             }

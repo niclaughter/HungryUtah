@@ -154,7 +154,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let textField = textFields.first,
                 let location = self.locationManager.location,
                 let text = textField.text where text.characters.count > 0 else { self.showAlert("Error Saving Post", message: "You either didn't provide a date, or we couldn't find your current location."); return }
-            PostController.postLocation(location, expirationDate: self.timePicker.date)
+            PostController.postLocation(location, expirationDate: self.timePicker.date, completion: { (truckLocation) in
+                if let truckLocation = truckLocation {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        for i in 0..<self.truckLocations.count {
+                            if self.truckLocations[i].name == truckLocation.name {
+                                self.truckLocations.removeAtIndex(i)
+                            }
+                        }
+                        self.truckLocations.append(truckLocation)
+                    })
+                }
+            })
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
