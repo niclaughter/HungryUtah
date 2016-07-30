@@ -31,7 +31,7 @@
 		213E43471D3EE4BC00932AA3 /* TruckController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckController.swift; sourceTree = "<group>"; };
 		213E43491D3EE72E00932AA3 /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		21B35DAE1D3FD775002497CF /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
-		21BF58FA1D3EF98000F38BFE /* FoodTruck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FoodTruck.entitlements; sourceTree = "<group>"; };
+		21BF58FA1D3EF98000F38BFE /* HungryUtah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HungryUtah.entitlements; sourceTree = "<group>"; };
 		21BF58FB1D3EFA0400F38BFE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		21EEFEE91D3E819C00224C80 /* HungryUtah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HungryUtah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EEFEEC1D3E819C00224C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		21EEFEEB1D3E819C00224C80 /* FoodTruck */ = {
 			isa = PBXGroup;
 			children = (
-				21BF58FA1D3EF98000F38BFE /* FoodTruck.entitlements */,
+				21BF58FA1D3EF98000F38BFE /* HungryUtah.entitlements */,
 				21EEFF0D1D3EA04C00224C80 /* Model */,
 				21EEFF0C1D3EA03D00224C80 /* ModelController */,
 				21EEFF081D3E9DB400224C80 /* StoryBoard */,
@@ -364,7 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FoodTruck/FoodTruck.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FoodTruck/HungryUtah.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FoodTruck/Info.plist;
@@ -379,7 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FoodTruck/FoodTruck.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FoodTruck/HungryUtah.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FoodTruck/Info.plist;
