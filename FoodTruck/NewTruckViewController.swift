@@ -79,7 +79,7 @@ class NewTruckViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
         if !exists {
-            if let resizedImageData = UIImageJPEGRepresentation(resizedImage, 0.5) {
+            if let resizedImageData = UIImageJPEGRepresentation(resizedImage, 0.01) {
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = true
                 TruckController.sharedController.saveTruck(name, image: resizedImageData)
                 UIApplication.sharedApplication().beginIgnoringInteractionEvents()
