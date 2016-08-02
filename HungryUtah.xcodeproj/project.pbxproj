@@ -24,6 +24,7 @@
 		660A26561D4009F200F1A62E /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660A26551D4009F200F1A62E /* Annotation.swift */; };
 		6689050C1D3FDDDD009430B3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689050B1D3FDDDD009430B3 /* LocationManager.swift */; };
 		6689050F1D3FDE29009430B3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6689050E1D3FDE29009430B3 /* MapKit.framework */; };
+		66956A8C1D4FAF9C00784504 /* utah.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 66956A8B1D4FAF9C00784504 /* utah.geojson */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		660A26551D4009F200F1A62E /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		6689050B1D3FDDDD009430B3 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6689050E1D3FDE29009430B3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		66956A8B1D4FAF9C00784504 /* utah.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utah.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		21EEFEE01D3E819C00224C80 = {
 			isa = PBXGroup;
 			children = (
+				66956A8B1D4FAF9C00784504 /* utah.geojson */,
 				6689050E1D3FDE29009430B3 /* MapKit.framework */,
 				21BF58FB1D3EFA0400F38BFE /* CloudKit.framework */,
 				21EEFEEB1D3E819C00224C80 /* FoodTruck */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21EEFEF71D3E819D00224C80 /* LaunchScreen.storyboard in Resources */,
+				66956A8C1D4FAF9C00784504 /* utah.geojson in Resources */,
 				21EEFEF41D3E819D00224C80 /* Assets.xcassets in Resources */,
 				21EEFEF21D3E819D00224C80 /* Main.storyboard in Resources */,
 			);
