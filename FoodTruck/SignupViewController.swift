@@ -65,6 +65,23 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
+        saveSignUpInfo()
+    }
+    
+    @IBAction func setmentedControlChanged(sender: UISegmentedControl) {
+        resignResponders()
+        if sender.selectedSegmentIndex == 0 {
+            hideFields()
+        } else {
+            presentNewTruckAlert()
+            foodTruckTextField.hidden = false
+            emailTextField.hidden = false
+        }
+    }
+    
+    // MARK: - Sign Up Functions
+    
+    func saveSignUpInfo() {
         if segmentedControl.selectedSegmentIndex == 0 {
             //individual user
             guard let first = firstNameTextField.text, last = lastNameTextField.text where first.characters.count > 0 && last.characters.count > 0 else { showAlert("Please Enter Data For All Fields"); return }
@@ -79,17 +96,6 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             } else {
                 showAlert("Invalid Email")
             }
-        }
-    }
-    
-    @IBAction func setmentedControlChanged(sender: UISegmentedControl) {
-        resignResponders()
-        if sender.selectedSegmentIndex == 0 {
-            hideFields()
-        } else {
-            presentNewTruckAlert()
-            foodTruckTextField.hidden = false
-            emailTextField.hidden = false
         }
     }
     
@@ -163,7 +169,29 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if segmentedControl.selectedSegmentIndex == 0 {
+            switch textField {
+            case firstNameTextField:
+                lastNameTextField.becomeFirstResponder()
+            case lastNameTextField:
+                saveSignUpInfo()
+            default:
+                textField.resignFirstResponder()
+            }
+        } else {
+            switch textField {
+            case firstNameTextField:
+                lastNameTextField.becomeFirstResponder()
+            case lastNameTextField:
+                foodTruckTextField.becomeFirstResponder()
+            case foodTruckTextField:
+                emailTextField.becomeFirstResponder()
+            case emailTextField:
+                saveSignUpInfo()
+            default:
+                textField.resignFirstResponder()
+            }
+        }
         return true
     }
     
@@ -181,4 +209,3 @@ class SignupViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         presentViewController(alert, animated: true, completion: nil)
     }
 }
-
