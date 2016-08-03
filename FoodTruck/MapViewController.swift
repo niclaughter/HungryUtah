@@ -35,7 +35,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        postButton.enabled = false
+        postButton.hidden = true
         
         locationManager.delegate = self
         mapView.delegate = self
