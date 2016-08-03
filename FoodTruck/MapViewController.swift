@@ -35,6 +35,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        postButton.enabled = false
+        
         locationManager.delegate = self
         mapView.delegate = self
 //        UserController.removeUser()
