@@ -121,15 +121,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let selectedLocation = view.annotation
-        let currentLocationMapItem = MKMapItem.mapItemForCurrentLocation()
-        if let coordinate = selectedLocation?.coordinate {
-            let selectedPlacemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
-            let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
-            let mapItems = [selectedMapItem, currentLocationMapItem]
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            MKMapItem.openMapsWithItems(mapItems, launchOptions: launchOptions)
-        }
+        presentMapsAlert(view)
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -182,6 +174,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     // MARK: - UIAlertControllers
+    
+    func presentMapsAlert(view: MKAnnotationView) {
+        let alert = UIAlertController(title: "Enjoy your lunch!", message: "Don't forget to thank the food truck for using HungryUtah and help keep us in business!", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "I sure will!", style: .Default) { (_) in
+            let selectedLocation = view.annotation
+            let currentLocationMapItem = MKMapItem.mapItemForCurrentLocation()
+            if let coordinate = selectedLocation?.coordinate {
+                let selectedPlacemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+                let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
+                let mapItems = [selectedMapItem, currentLocationMapItem]
+                let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+                MKMapItem.openMapsWithItems(mapItems, launchOptions: launchOptions)
+            }
+        }
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
     
     func showLocationSettingsAlert() {
         let alert = UIAlertController(title: "Location is Turned Off", message: "To see nearby food trucks, you'll need to enable location for this app.", preferredStyle: .Alert)
