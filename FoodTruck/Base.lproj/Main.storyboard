@@ -198,8 +198,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-wU-zjh">
-                                <rect key="frame" x="549" y="40" width="31" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="547" y="40" width="33" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Post"/>
                                 <connections>
                                     <action selector="postButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="0nd-gd-1du"/>
