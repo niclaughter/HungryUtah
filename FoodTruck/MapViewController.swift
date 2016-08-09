@@ -45,11 +45,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         LocationManager.shared.setUpMapView(mapView, locationManager: locationManager)
         
-        TruckController.fetchAllTruckLocationRecords { (trucks) in
-            dispatch_async(dispatch_get_main_queue(), { 
-                self.truckLocations = trucks
-            })
-        }
+        fetchTrucks()
     }
     
     func addAnnotationsForTrucksWhenSet() {
@@ -64,6 +60,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             
             mapView.addAnnotation(info)
+        }
+    }
+    
+    func clearTrucks() {
+        truckLocations = []
+        mapView.removeAnnotations(mapView.annotations)
+    }
+    
+    func fetchTrucks() {
+        TruckController.fetchAllTruckLocationRecords { (trucks) in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.truckLocations = trucks
+            })
         }
     }
     

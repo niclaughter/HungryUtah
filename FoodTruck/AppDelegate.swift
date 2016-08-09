@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
+        if let view = self.window?.rootViewController as? MapViewController {
+            view.clearTrucks()
+            view.fetchTrucks()
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
