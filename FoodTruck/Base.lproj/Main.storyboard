@@ -197,10 +197,13 @@
                                     <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="TOq-ND-egh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-wU-zjh">
-                                <rect key="frame" x="547" y="40" width="33" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-wU-zjh">
+                                <rect key="frame" x="20" y="40" width="560" height="35"/>
+                                <color key="backgroundColor" red="0.2939647131" green="0.86666666670000003" blue="0.41626653670000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Post"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="postButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="0nd-gd-1du"/>
                                 </connections>
@@ -212,11 +215,20 @@
                             <constraint firstAttribute="trailing" secondItem="PTp-wU-zjh" secondAttribute="trailing" constant="20" id="MhV-ld-juc"/>
                             <constraint firstItem="ba5-fB-SAm" firstAttribute="top" secondItem="csg-4S-c2b" secondAttribute="bottom" constant="20" id="Ml4-EE-ERC"/>
                             <constraint firstAttribute="trailing" secondItem="i2S-P7-VcK" secondAttribute="trailing" id="Ov8-Zg-wml"/>
+                            <constraint firstItem="PTp-wU-zjh" firstAttribute="leading" secondItem="i2S-P7-VcK" secondAttribute="leading" id="Pga-we-QWf"/>
+                            <constraint firstItem="PTp-wU-zjh" firstAttribute="leading" secondItem="dsk-Il-TLn" secondAttribute="leadingMargin" id="RR8-vq-UsB"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="bottom" secondItem="ba5-fB-SAm" secondAttribute="top" id="URf-B1-FFp"/>
                             <constraint firstItem="i2S-P7-VcK" firstAttribute="top" secondItem="dsk-Il-TLn" secondAttribute="top" id="W9G-37-sgK"/>
+                            <constraint firstItem="PTp-wU-zjh" firstAttribute="trailing" secondItem="dsk-Il-TLn" secondAttribute="trailingMargin" id="WIs-RG-iMU"/>
                             <constraint firstAttribute="trailing" secondItem="csg-4S-c2b" secondAttribute="trailing" constant="20" id="bOH-2Z-iqR"/>
                             <constraint firstItem="PTp-wU-zjh" firstAttribute="top" secondItem="QmX-vJ-22U" secondAttribute="bottom" constant="20" id="fiH-dC-lWW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MhV-ld-juc"/>
+                                <exclude reference="Pga-we-QWf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="i2S-P7-VcK" id="nqY-7B-LV2"/>
