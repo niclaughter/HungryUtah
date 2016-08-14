@@ -17,9 +17,9 @@ class LocationManager {
     
     
     func setUpMapView(mapView: MKMapView, locationManager: CLLocationManager) {
+        locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 50
-        locationManager.startUpdatingLocation()
         
         guard let location = locationManager.location else { return }
         
