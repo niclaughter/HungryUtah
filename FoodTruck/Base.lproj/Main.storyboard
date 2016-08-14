@@ -197,8 +197,8 @@
                                     <action selector="centerMapOnUserLocationButtonTapped:" destination="U6j-KH-Cn0" eventType="touchUpInside" id="TOq-ND-egh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-wU-zjh">
-                                <rect key="frame" x="20" y="40" width="560" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-wU-zjh">
+                                <rect key="frame" x="20" y="40" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.2939647131" green="0.86666666670000003" blue="0.41626653670000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Post">
